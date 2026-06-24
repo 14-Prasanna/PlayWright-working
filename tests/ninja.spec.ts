@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 
-test.afterEach(async({page}) => {
+test.beforeEach(async({page}) => {
     await page.goto(process.env.PRODUCTION_BASE_URL!)
 })
 
