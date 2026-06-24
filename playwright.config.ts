@@ -25,7 +25,10 @@ export default defineConfig({
 
   workers: process.env.CI ? 3 : undefined,
 
-  reporter: 'html',
+   reporter: [
+    ['html'],
+    ['allure-playwright']
+  ],
 
   use: 
   {
