@@ -1,21 +1,15 @@
 import { defineConfig, devices } from '@playwright/test';
-
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
 import dotenv from 'dotenv';
 import path from 'path';
 
 const envName = process.env.ENV || 'qa';
 
-dotenv.config({ 
-  path: path.resolve(__dirname, `./env/.env.${envName}`) 
+dotenv.config({
+  path: path.resolve(process.cwd(), `env/.env.${envName}`)
 });
 
-
 export default defineConfig({
-  testDir: './tests',
+  testDir: './tests/Automation',
 
   fullyParallel: true,
 
@@ -25,56 +19,51 @@ export default defineConfig({
 
   workers: process.env.CI ? 3 : undefined,
 
-   reporter: [
+  reporter: [
     ['html'],
     ['allure-playwright']
   ],
 
-  use: 
-  {
-    trace: 'on',
+  use: {
+    trace: 'on-first-retry',
     headless: process.env.HEADLESS !== 'false',
     screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
-  
+    video: 'retain-on-failure'
   },
-
 
   projects: [
-
-  {
-    name: 'Firefox',
-    use: {
-      ...devices['Desktop Firefox'],
+    {
+      name: 'Firefox',
+      use: {
+        ...devices['Desktop Firefox']
+      }
     },
-  },
 
-  {
-    name: 'Chromium',
-    use: {
-      ...devices['Desktop Chrome'],
+    {
+      name: 'Chromium',
+      use: {
+        ...devices['Desktop Chrome']
+      }
     },
-  },
 
-  {
-    name: 'Edge',
-    use: {
-      ...devices['Desktop Edge'],
-      channel: 'msedge',
+    {
+      name: 'Edge',
+      use: {
+        ...devices['Desktop Edge'],
+        channel: 'msedge'
+      }
     },
-  },
 
-  {
-  name: 'Brave',
-  use: {
-    browserName: 'chromium',
-    launchOptions: {
-      executablePath:
-        'C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe'
+    {
+      name: 'Brave',
+      use: {
+        browserName: 'chromium',
+        channel: undefined,
+        launchOptions: {
+          executablePath:
+            'C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe'
+        }
+      }
     }
-  }
-}
-
-],
-
+  ]
 });
