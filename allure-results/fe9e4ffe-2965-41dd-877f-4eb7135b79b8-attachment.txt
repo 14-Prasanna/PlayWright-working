@@ -1,0 +1,6 @@
+{ x: 49, y: 342, width: 744.84375, height: 35 }
+25
+{ x: 49, y: 429.5, width: 744.84375, height: 35 }
+10
+
+Test completed

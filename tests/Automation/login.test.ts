@@ -2,6 +2,7 @@ import {test, expect } from '@playwright/test';
 
 test('Login Test', async ({page}) => {
     await page.goto("http://automationexercise.com");
+    await page.reload();
     await expect(page.locator("//img[@alt='Website for automation practice']")).toBeVisible();
     await page.getByText(" Signup / Login").click();
     await page.locator("//input[@data-qa='login-email']").fill("testlogin@gmail.com");

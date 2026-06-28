@@ -1,0 +1,3 @@
+Dialog type: prompt
+The message: Please enter your name
+Test Completed

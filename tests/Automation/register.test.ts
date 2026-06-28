@@ -16,6 +16,8 @@ test.describe("Automation Exercise Registration", () => {
 
   test("Registration with valid details", async ({ page }) => {
 
+    console.log(page.title() + page.url())
+
     await expect(page).toHaveTitle(/Automation Exercise/);
 
     await page.getByRole("link", { name: "Signup / Login" }).click();
