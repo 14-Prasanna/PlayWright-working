@@ -9,12 +9,29 @@ test.beforeAll(async () => {
 });
 
 test.describe("Automation Exercise Registration", () => {
+  
 
   test.beforeEach(async ({ page }) => {
     await page.goto("https://automationexercise.com/");
   });
 
   test("Registration with valid details", async ({ page }) => {
+
+
+    await page.route('**/*', route => {
+        const url = route.request().url();
+
+        if (
+            url.includes('googleads') ||
+            url.includes('doubleclick') ||
+            url.includes('googlesyndication') ||
+            url.includes('adservice')
+        ) {
+            route.abort();
+        } else {
+            route.continue();
+        }
+    });
 
     console.log(page.title() + page.url())
 

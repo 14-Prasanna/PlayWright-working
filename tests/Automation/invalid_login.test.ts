@@ -1,9 +1,26 @@
 import { test, expect } from "@playwright/test";
 
+test.beforeEach(async ({ page }) => {
+    await page.goto("https://automationexercise.com/");
+  });
+
 test("Login with Invalid Credentials", async ({ page }) => {
 
-    
-    await page.goto("https://automationexercise.com/");
+
+    await page.route('**/*', route => {
+        const url = route.request().url();
+
+        if (
+            url.includes('googleads') ||
+            url.includes('doubleclick') ||
+            url.includes('googlesyndication') ||
+            url.includes('adservice')
+        ) {
+            route.abort();
+        } else {
+            route.continue();
+        }
+    });
 
     
     await expect(page).toHaveTitle(/Automation Exercise/);
@@ -36,4 +53,8 @@ test("Login with Invalid Credentials", async ({ page }) => {
     ).toHaveText("Your email or password is incorrect!");
 
     await page.waitForTimeout(3000);
+});
+
+test.afterEach(async ()=>{
+    console.log("Test completed")
 });

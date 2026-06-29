@@ -20,28 +20,39 @@ export default defineConfig({
 
   retries: process.env.CI ? 2 : 0,
 
-  workers: process.env.CI ? 3 : undefined,
+  workers: process.env.CI ? 2 : 2,
+
+  testMatch:["tests/parameterization.test.ts"],
 
   reporter: [
+    ['dot'],
+    ['list'],
+    ['line'],
     ['html'],
     ['allure-playwright']
   ],
+
+  repeatEach:2,
+
+  globalTimeout:10000,
+
+  expect:{
+    timeout:10000
+  },
+  
+
 
   use: {
     trace: 'on-first-retry',
     headless: process.env.HEADLESS !== 'false',
     screenshot: 'only-on-failure',
-    video: 'retain-on-failure'
+    video: 'retain-on-failure',
+    navigationTimeout:15000,
+    actionTimeout: 10000
+    
   },
 
   projects: [
-    {
-      name: 'Firefox',
-      use: {
-        ...devices['Desktop Firefox']
-      }
-    },
-
     {
       name: 'Chromium',
       use: {
