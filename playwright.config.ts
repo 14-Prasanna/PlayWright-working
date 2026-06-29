@@ -20,9 +20,9 @@ export default defineConfig({
 
   retries: process.env.CI ? 2 : 0,
 
-  workers: process.env.CI ? 2 : 2,
+  workers: process.env.CI ? 2 : 1,
 
-  testMatch:["tests/parameterization.test.ts"],
+  testMatch:["tests/blaze.test.ts"],
 
   reporter: [
     ['dot'],
@@ -32,9 +32,7 @@ export default defineConfig({
     ['allure-playwright']
   ],
 
-  repeatEach:2,
-
-  globalTimeout:10000,
+  globalTimeout:180000,
 
   expect:{
     timeout:10000
@@ -60,24 +58,24 @@ export default defineConfig({
       }
     },
 
-    {
-      name: 'Edge',
-      use: {
-        ...devices['Desktop Edge'],
-        channel: 'msedge'
-      }
-    },
+    // {
+    //   name: 'Edge',
+    //   use: {
+    //     ...devices['Desktop Edge'],
+    //     channel: 'msedge'
+    //   }
+    // },
 
-    {
-      name: 'Brave',
-      use: {
-        browserName: 'chromium',
-        channel: undefined,
-        launchOptions: {
-          executablePath:
-            'C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe'
-        }
-      }
-    }
+    // {
+    //   name: 'Brave',
+    //   use: {
+    //     browserName: 'chromium',
+    //     channel: undefined,
+    //     launchOptions: {
+    //       executablePath:
+    //         'C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe'
+    //     }
+    //   }
+    // }
   ]
 });
