@@ -66,16 +66,16 @@ export default defineConfig({
     //   }
     // },
 
-    // {
-    //   name: 'Brave',
-    //   use: {
-    //     browserName: 'chromium',
-    //     channel: undefined,
-    //     launchOptions: {
-    //       executablePath:
-    //         'C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe'
-    //     }
-    //   }
-    // }
+    {
+      name: 'Brave',
+      use: {
+        browserName: 'chromium',
+        channel: undefined,
+        launchOptions: {
+          executablePath:
+            'C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe'
+        }
+      }
+    }
   ]
 });
