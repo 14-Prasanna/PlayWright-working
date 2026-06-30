@@ -22,7 +22,7 @@ export default defineConfig({
 
   workers: process.env.CI ? 2 : 1,
 
-  testMatch:["tests/blaze.test.ts"],
+  // testMatch:["tests/blaze.test.ts"],
 
   reporter: [
     ['dot'],
