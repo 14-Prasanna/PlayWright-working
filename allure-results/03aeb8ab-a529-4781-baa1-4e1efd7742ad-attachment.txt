@@ -1,0 +1,19 @@
+https://www.testmuai.com/selenium-playground/simple-form-demo/
+Promise {
+  <pending>,
+  [Symbol(async_id_symbol)]: 2539,
+  [Symbol(trigger_async_id_symbol)]: 2538,
+  [Symbol(kResourceStore)]: undefined
+}
+Promise {
+  <pending>,
+  [Symbol(async_id_symbol)]: 3608,
+  [Symbol(trigger_async_id_symbol)]: 2574,
+  [Symbol(kResourceStore)]: undefined
+}
+Promise {
+  <pending>,
+  [Symbol(async_id_symbol)]: 4760,
+  [Symbol(trigger_async_id_symbol)]: 4759,
+  [Symbol(kResourceStore)]: undefined
+}

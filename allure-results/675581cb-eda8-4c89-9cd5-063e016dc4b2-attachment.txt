@@ -1,0 +1,11 @@
+Page Title: STORE
+Current URL: https://demoblaze.com/
+Page content length: 42929
+First Product: Samsung galaxy s6
+Tag Name: a
+Href: prod.html?idp_=1
+Bounding Box: { x: 391, y: 591.015625, width: 196.5, height: 24 }
+Text Color: rgb(1, 76, 140)
+Product Name: Samsung galaxy s6
+Alert Message: Thanks for the message!!
+Contact Alert: Thanks for the message!!
