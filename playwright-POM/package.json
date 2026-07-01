@@ -1,0 +1,21 @@
+{
+  "name": "playwright-pom",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "report": "npx playwright show-report"
+  },
+  "keywords": ["playwright", "Automation", "POM"],
+  "author": "Prasanna",
+  "license": "ISC",
+  "description": "playwright Automation Testing with POM ",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.0.1"
+  },
+  "dependencies": {
+    "csv-parse": "^7.0.0"
+  }
+}

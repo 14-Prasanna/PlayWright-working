@@ -1,0 +1,19 @@
+{
+    "valid":{
+        "username" : "admin",
+        "password":  "admin",
+        "expectedResult" : "Welcome admin"
+    },
+    
+    "Invalid-username":{
+        "username" : "ygef",
+        "password" : "admin",
+        "expectedResult" :"User does not exist."
+    },
+
+    "Invalid-password" : {
+        "username" : "admin",
+        "password" : "gyuief",
+        "expectedResult" : "Wrong password."
+    }
+}

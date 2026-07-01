@@ -1,0 +1,13 @@
+{
+    "valid":{
+        "username" : "2k22cse115@kiot.ac.in",
+        "password" : "1234567890",
+        "expectedResult" : "My Account"
+    },
+    "invalid":{
+        "username" : "Admin",
+        "password" : "ad,min",
+        "expectedResult" : "Warning: No match for E-Mail Address and/or Password."
+    }
+
+}

@@ -1,0 +1,10 @@
+<billing>
+  <customer>
+    <name>Prasanna</name>
+    <country>India</country>
+    <city>Chennai</city>
+    <card>4111111111111111</card>
+    <month>12</month>
+    <year>2026</year>
+  </customer>
+</billing>

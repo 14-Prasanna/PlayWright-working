@@ -1,0 +1,28 @@
+{
+  "name": "playwright-pom",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "report": "npx playwright show-report"
+  },
+  "keywords": [
+    "playwright",
+    "Automation",
+    "POM",
+    "Ninja"
+  ],
+  "author": "Prasanna",
+  "license": "ISC",
+  "description": "playwright Automation Testing with POM in the Ninja Website",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.0.1"
+  },
+  "dependencies": {
+    "crossenv": "^0.0.2-security",
+    "csv-parse": "^7.0.0",
+    "dotenv": "^17.4.2"
+  }
+}
